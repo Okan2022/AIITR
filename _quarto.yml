@@ -1,0 +1,24 @@
+project:
+  type: website
+
+website:
+  title: "An intuitive Introduction to R"
+  sidebar:
+    style: "docked"
+    search: true
+    contents: 
+    - Chapter_00_Welcome.qmd
+    - Chapter_01_Fundamentals.qmd
+    - Chapter_02_Data_Manipulation.qmd
+    - Chapter_03_Data_Visualization.qmd
+    - Chapter_04_Loops_and_Functions.qmd
+    - Chapter_05_Data_Analysis.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

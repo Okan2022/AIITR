@@ -197,7 +197,7 @@ print(prices_combined)
 Objects can contain information of different *data types*:
 
 |               |               |                                              |
-|------------------|------------------|------------------------------------|
+|-------------------|-------------------|------------------------------------|
 | **Numeric**   | Numbers       | `c(1, 2.4, 3.14, 4)`                         |
 | **Character** | Text          | `c("1", "blue", "fun", "monster")`           |
 | **Logical**   | True or false | `c(TRUE, FALSE, TRUE, FALSE)`                |
@@ -210,17 +210,24 @@ For data analysis commands sometimes require special object classes. With the `c
 class(prices)
 class(food)
 class(cola_prices)
+```
 
+We can also change the classes of variables. To do so, we can use `as.factor()`, `as.numeric()`, `as.character()` and so forth. You can do that for every class. Let us change the cola_prices to a vector.
 
+-   To do so, we change call `as.character()` and put the object in it. Then we assign it to another object called `cola_prices_character`. This object will have the class `"character"`.
+
+```{r}
 #We want the cola_prices vector to be a character 
 cola_prices_character <- as.character(cola_prices)
 
 #Checking it
-class(cola_prices)
 class(cola_prices_character)
+print(cola_prices_character)
 ```
 
 ### 3.6 Matrices
+
+#### 3.6.1 Making Matrices
 
 There are different ways of building a matrix. Let us start by just binding the vectors as columns together. You can do that `cbind()` if you want to bind columns together. `rbind()` is therefore the command to bind rows together.
 
@@ -258,7 +265,26 @@ dim(matrix_example2) #The dim() command shows you the dimensions of a matrix
 
 ```
 
-We want to work with matrices. You can extract columns and rows
+```{r}
+# We can also create directly a matrix 
+
+matrix_example <- matrix(1:20, nrow = 4, ncol = 5, byrow = T) # create numeric matrix
+print(matrix_example)
+
+dim(matrix_example) #The dim() command shows you the dimensions of a matrix
+
+#What happens if byrow is set to FALSE?
+
+matrix_example2 <- matrix(1:20, nrow = 4, ncol = 5, byrow = F) # create numeric matrix
+print(matrix_example2)
+
+dim(matrix_example2) #The dim() command shows you the dimensions of a matrix
+
+```
+
+#### 3.6.2 Working with Matrices
+
+We want to work with matrices. You can extract columns and rows.
 
 ```{r}
 
@@ -275,6 +301,12 @@ print(object3 <- matrix_example[row, column])
 
 print(matrix_example)
 
+
+  
+
+```
+
+```{r}
 #More Information 
 
 nrow(matrix_example) #How many rows
@@ -282,8 +314,6 @@ nrow(matrix_example) #How many rows
 ncol(matrix_example) #How many columns
 
 dim(matrix_example) #Overall dimensions
-  
-
 ```
 
 ### 3.7 Data Frames
@@ -302,12 +332,12 @@ df_example <-
     logical = c(TRUE, FALSE, FALSE, TRUE)
   )
 
+#Checking it
 print(df_example)
+```
 
-#What if we want to inspect single variables? 
-
+```{r}
 df_example$country #You tell R to use the data frame "df_Example" and with the dollar sign, you tell R to print a certain variable. 
-
 ```
 
 ## 4. The `ifelse()` function and `ifelse` conditions:

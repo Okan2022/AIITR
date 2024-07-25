@@ -24,7 +24,7 @@ To install packages you use the very creative `install.packages()` command in R.
 -   You put the name of the package in quotation marks into the function.
 
 ```{r, eval = FALSE}
-install.packages("tidyverse") 
+install.packages("pacman") 
 ```
 
 ### 2.2 Loading your packages
@@ -36,8 +36,7 @@ While you only need to install a package once, you need to load it every time in
 -   Put the name of
 
 ```{r, eval = FALSE}
-library(tidyverse) #You run the code and voila you can use the package
-library(haven) #Remember that you do not need quotation marks in this command 
+library(pacman) #You run the code and voila you can use the package
 ```
 
 It is always important to have an efficient workflow in R. Traditional R users, load all packages they need at the beginning of their page. Logically, so they just need to go back to the top of the script and need to load it every time they open the script. But there are way more elegant and pragmatic ways to do that.
